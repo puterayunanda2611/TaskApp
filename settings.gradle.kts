@@ -21,3 +21,14 @@ dependencyResolutionManagement {
 
 rootProject.name = "TaskApp"
 include(":app")
+include(":core:data")
+include(":core:ui")
+include(":core:network")
+include(":core:designsystem")
+include(":core:common")
+include(":core:testing")
+include(":core:datastore")
+include(":core:database")
+include(":core:model")
+include(":feature:login")
+include(":feature:home")

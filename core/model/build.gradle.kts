@@ -1,22 +1,19 @@
 import id.mobiledevdpk.taskapp.AndroidConfig
 
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
 }
 
 android {
-    namespace = AndroidConfig.DEFAULT_NAMESPACE
+    namespace = "${AndroidConfig.DEFAULT_NAMESPACE}.core.model"
     compileSdk = AndroidConfig.COMPILE_SDK
 
     defaultConfig {
-        applicationId = AndroidConfig.APPLICATION_ID
         minSdk = AndroidConfig.MIN_SDK
-        targetSdk = AndroidConfig.COMPILE_SDK
-        versionCode = AndroidConfig.VERSION_CODE
-        versionName = AndroidConfig.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -29,11 +26,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "11"
     }
 }
 
